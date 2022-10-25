@@ -57,3 +57,36 @@ Agora vamos configurar os parâmetros da EC2.
 
 
 ![EC2_08](./assets/tela_08.png)
+
+## Passo 2: Testar o acesso web na aplicação
+
+No painel do serviço de EC2, vamos verificar o estato da nossa instanância:
+
+- Executando (EC2 ativa, provisionada e pronta para utilização)
+- Prosionando (EC2 ainda está sendo disponiblizada pela AWS)
+
+Vamos copiar o IP público da nossa instânia e testar em um navegado para validar a aplicação.
+
+![EC2_09](./assets/tela_09.png)
+
+Observamos que foi retornado um erro de timeout de endereço de IP, isso ocorreu pois para validar a aplicação vamos precisar liberar a porta HTTP (TCP 80) no nosso Security Group.
+
+![EC2_10](./assets/tela_10.png)
+
+Clicando na aba "Segurança" vamos clicar no nosso Security Group para editar as regas de acesso.
+
+![EC2_11](./assets/tela_11.png)
+
+Selecionar a aba "Regras de entrada" e "Editar regras de entrada"
+
+![EC2_12](./assets/tela_12.png)
+
+Vamos "Adicionar regras", selecionar o protocolo HTTP, Colocar para "Qualquer origem" e vamos "Salvar regras".
+
+![EC2_13](./assets/tela_13.png)
+
+Realizando um novo teste de acesso ao IP externo, vamos ter sucesso em acessar nossa aplicação.
+
+![EC2_14](./assets/tela_14.png)
+
+## Passo 3: Criar um ELB (Elastic Load Balance)
