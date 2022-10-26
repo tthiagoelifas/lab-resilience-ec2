@@ -1,6 +1,6 @@
 # CloudFaster Academy: Laboratório de resliência com EC2 + Load Balance + Auto Scaling
 
-> **Autor:** [CloudFaster Tecnologia](https://cloudfaster.com.br), **Última revisão:** 25/10/2022
+> **Autor:** [CloudFaster Tecnologia](https://cloudfaster.com.br), **Última revisão:** 26/10/2022
 
 ## Pré-requisitos
 
@@ -186,8 +186,138 @@ Cole o link do DNS do Load Balancer e acesse sua aplicação
 
 ![EC2_32](./assets/tela_32.png)
 
-
 ## Passo 6: Criar uma AMI e guardar o ID
+
+No serviço de EC2, vamos selecionar a *Instância* que criamos:
+- Clicar em *Açoes*
+    - *Imagem e modelos*
+        - *Criar Imagem* 
+
+![EC2_33](./assets/tela_33.png)
+<br /> <br />
+<br /> <br />
+Vamos colocar um Nome e uma descrição na nossa AMI (`AMI_EC2_LAB`
+)
+O restante das configurações pode deixar de forma padrão (não precisa modificar)
+<br /> <br />
+<br /> <br />
+
+![EC2_34](./assets/tela_34.png)
+
+Acesse o menu de AMI no serviço de EC2 e guarde o valor do ID da AMI gerada
+`ami-08669891ee3aa5427`
+
+![EC2_37](./assets/tela_37.png)
 
 ## Passo 7: Terminar a EC2 criada
 
+Clique com o botão direto no mouse em cima do nome da *instância* e seleciona a opção *Encerrar Intância*
+
+![EC2_35](./assets/tela_35.png)
+
+Ao abriri o popup de alerta, clique em *Encerrar*
+
+> **Importante:** Após encerrar a *Instância* o acesso a aplicação nao estará mais funcional
+
+![EC2_36](./assets/tela_36.png)
+
+## Passo 7: Criar um Launch template
+
+No Painel da EC2, vamos entrar em *Modelos de Execução*
+
+Clicar em *Criar modelo de execução*
+
+![EC2_38](./assets/tela_38.png)
+
+Colocar um *Nome* e uma *Descrição* para nosso template `TEMPLATE_LAB_EC2`
+
+
+![EC2_39](./assets/tela_39.png)
+
+Selecionar a *AMI* que criamos
+
+![EC2_40](./assets/tela_40.png)
+
+Colocar o *Tipo de instância* como `t2.micro` 
+
+![EC2_41](./assets/tela_41.png)
+
+Vamos selecionar uma *subnet* e apontar o *Security Group* que criamos
+
+![EC2_42](./assets/tela_42.png)
+
+Selecionar o *par de chaves* que criamos para a nossa *Instância*
+
+![EC2_43](./assets/tela_43.png)
+
+Podemos ver agora nosso *modelo de execução* criado.
+
+![EC2_44](./assets/tela_44.png)
+
+## Passo 8: Criar o Auto Scaling
+
+No painel da EC2, vamos navegar no item *Auto Scaling* e *Grupos de Auto Scaling*
+
+Clicar em *Criar grupo do Auto Scaling*
+
+![EC2_45](./assets/tela_45.png)
+
+Colocar um *Nome* (`AS_LAB_EC2`) no nosso *Grupo do Auto Scaling*
+
+Escolher o *Modelo de execução* (`TEMPLATE_LAB_EC2`) que criamos anteriormente
+
+Clicar em *Próximo*.
+
+![EC2_46](./assets/tela_46.png)
+
+Selecionar a *VPC* e a *Zona de Disponibilidade* que criou o template(`us-east-1b`).
+
+Clicar em *Próximo*.
+
+![EC2_47](./assets/tela_47.png)
+
+Vamos anexar agora nosso *Load Balancer* e escolher o *Grupo de Destino* que criamos pra ele.
+
+
+![EC2_48](./assets/tela_48.png)
+
+Configurar a capacidade do nosso *Grupo de Auto Scaling*
+Colocar o valor `2` nas 3 opçoes de capacidade
+
+Clicar em *Próximo*.
+
+![EC2_49](./assets/tela_49.png)
+
+Na etapa de *Adicionar noficações*: Clicar em *Próximo*.
+
+Na etapa de *Adicionar etiquetas*: Clicar em *Próximo*.
+
+Clicar em *Criar grupo de Auto Scaling*
+
+## Passo 8: Verificar funcionamento do Auto Scaling
+
+Podemos ver que o *Auto Scaling* subiu duas *instâncias EC2*
+
+![EC2_50](./assets/tela_50.png)
+
+Podemos acessar o link do *Elastic Load Balancer* que criamos e validar o acesso
+
+![EC2_32](./assets/tela_32.png)
+
+Vamos agora deletar uma *instância* e validar se o *Auto Scaling* vai subir uma nova *EC2*.
+
+Selecionar a *instância*, clique com o botão direito do mouse e clique em *Encerrar instância*.
+
+![EC2_51](./assets/tela_51.png)
+
+Podemos ver após terminar uma *instância* o Auto Scaling iniciou o provisionamento de outra.
+
+![EC2_52](./assets/tela_52.png)
+
+Assim que a *instância* estiver em execução, ja temremos as duas funcionando normalmente com nosso *Load Balancer*.
+
+![EC2_53](./assets/tela_53.png)
+
+Finalizando o LAB temos uma aplicação escalavél na AWS utilizando o serviço de EC2 + ELB + Auto Scaling
+
+That's all folks!
