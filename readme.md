@@ -1,11 +1,32 @@
 # CloudFaster Academy: Laboratório de resliência com EC2 + Load Balance + Auto Scaling
 
-> **Autor:** [CloudFaster Tecnologia](https://cloudfaster.com.br), **Última revisão:** 26/10/2022
+> **Autor:** [CloudFaster Tecnologia](https://cloudfaster.com.br), **Última revisão:** 31/10/2022
+
+## Introdução
+
+Neste laboratório iremos provisionar um ambiente resiliente e escalável, vamos subir uma aplicação em uma Amazon EC2, configurar um balanceador de carga e o serviço de Auto Scaling.
+Para este cenário estaremos utilizando os seguintes serviços da AWS:
+
+- Amazon EC2 (Amazon Elastic Compute Cloud):
+    - Serviço de de capacidade computacional da AWS.
+
+- ELB (Elastic Load Balancing):
+    - Serviço de balanceadro de cargas da AWS.
+    - Distribui o tráfego de rede para melhorar a escalabilidade da aplicação.
+
+- AWS Auto Scaling:
+    - Serviço que monitora os aplicativos e ajusta automaticamente a capacidade.
+    - Serviço de escalabildiade da AWS.
+
+
+![ARQ](./assets/ARQ-ECS-HA-SCALING.png)
 
 ## Pré-requisitos
 
 1) Uma conta na AWS.
 2) Um usuário com permissões suficientes para acessar os recursos necessários (EC2, VPC, ELB, Auto Scaling).
+
+## Hands-on
 
 ## Passo 1: Subir uma EC2 com script de inicialização para aplicação web
 
