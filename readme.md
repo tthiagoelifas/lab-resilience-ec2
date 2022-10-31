@@ -159,6 +159,7 @@ Na configuração do *Target Group*, temos alguns tipos de *Target*, pro nosso A
 ![EC2_27](./assets/tela_27.png)
 
 Vamos colocar um *Nome* e a porta que o nosso *Target* vai trabalhar.
+- Nome: `TARGET_LAB_EC2`
 - Porta 80 (protocolo HTTP)
 
 ![EC2_28](./assets/tela_28.png)
@@ -168,6 +169,7 @@ Seleciona a *Instância* que foi criada no inicio do LAB e clique em *Include as
 ![EC2_29](./assets/tela_29.png)
 
 Criando nosso Listener
+
 Vamos selecionar o *Target Group* que acabamos de criar
 
 Clicar quem *Criar Load Balancer*
@@ -199,6 +201,8 @@ No serviço de EC2, vamos selecionar a *Instância* que criamos:
 Vamos colocar um Nome e uma descrição na nossa AMI (`AMI_EC2_LAB`
 )
 O restante das configurações pode deixar de forma padrão (não precisa modificar)
+
+
 <br /> <br />
 <br /> <br />
 
@@ -207,15 +211,19 @@ O restante das configurações pode deixar de forma padrão (não precisa modifi
 Acesse o menu de AMI no serviço de EC2 e guarde o valor do ID da AMI gerada
 `ami-08669891ee3aa5427`
 
+> **Importante:** Observe tambem a coluna *Status* da AMI, a mesma deve estar como `Disponível`, caso esteja sendo provisionada, aguarde até a conclusão (este processo pode levar alguns minutos).
+
 ![EC2_37](./assets/tela_37.png)
 
 ## Passo 7: Terminar a EC2 criada
+
+Após a conclusão da criação da AMI e a mesma estiver como `Disponivel`, vamos iniciar o processo de encerramento da EC2.
 
 Clique com o botão direto no mouse em cima do nome da *instância* e seleciona a opção *Encerrar Intância*
 
 ![EC2_35](./assets/tela_35.png)
 
-Ao abriri o popup de alerta, clique em *Encerrar*
+Ao abrir o popup de alerta, clique em *Encerrar*
 
 > **Importante:** Após encerrar a *Instância* o acesso a aplicação nao estará mais funcional
 
@@ -231,6 +239,8 @@ Clicar em *Criar modelo de execução*
 
 Colocar um *Nome* e uma *Descrição* para nosso template `TEMPLATE_LAB_EC2`
 
+- Nome: `TEMPLATE_LAB_EC2`
+
 
 ![EC2_39](./assets/tela_39.png)
 
@@ -242,13 +252,14 @@ Colocar o *Tipo de instância* como `t2.micro`
 
 ![EC2_41](./assets/tela_41.png)
 
-Vamos selecionar uma *subnet* e apontar o *Security Group* que criamos
-
-![EC2_42](./assets/tela_42.png)
-
 Selecionar o *par de chaves* que criamos para a nossa *Instância*
 
 ![EC2_43](./assets/tela_43.png)
+
+Vamos selecionar uma *subnet* (Na mesa Zona de Disponibilidade do nosso *Elastic Load Balancer*) e apontar o *Security Group* que criamos
+
+![EC2_42](./assets/tela_42.png)
+
 
 Podemos ver agora nosso *modelo de execução* criado.
 
@@ -278,6 +289,8 @@ Clicar em *Próximo*.
 
 Vamos anexar agora nosso *Load Balancer* e escolher o *Grupo de Destino* que criamos pra ele.
 
+Clicar em *Próximo*.
+
 
 ![EC2_48](./assets/tela_48.png)
 
@@ -294,9 +307,9 @@ Na etapa de *Adicionar etiquetas*: Clicar em *Próximo*.
 
 Clicar em *Criar grupo de Auto Scaling*
 
-## Passo 8: Verificar funcionamento do Auto Scaling
+## Passo 9: Verificar funcionamento do Auto Scaling
 
-Podemos ver que o *Auto Scaling* subiu duas *instâncias EC2*
+Podemos ver que o *Auto Scaling* subiu duas *instâncias EC2* e a *Verificação de status* foi concluida.
 
 ![EC2_50](./assets/tela_50.png)
 
@@ -314,7 +327,7 @@ Podemos ver após terminar uma *instância* o Auto Scaling iniciou o provisionam
 
 ![EC2_52](./assets/tela_52.png)
 
-Assim que a *instância* estiver em execução, ja temremos as duas funcionando normalmente com nosso *Load Balancer*.
+Assim que a *instância* estiver em execução, ja teremos as duas funcionando normalmente com nosso *Load Balancer*.
 
 ![EC2_53](./assets/tela_53.png)
 
