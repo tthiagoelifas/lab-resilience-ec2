@@ -8,7 +8,7 @@ Neste laboratório iremos provisionar um ambiente resiliente e escalável, vamos
 Para este cenário estaremos utilizando os seguintes serviços da AWS:
 
 - Amazon EC2 (Amazon Elastic Compute Cloud):
-    - Serviço de de capacidade computacional da AWS.
+    - Serviço de capacidade computacional da AWS.
 
 - ELB (Elastic Load Balancing):
     - Serviço de balanceadro de cargas da AWS.
@@ -33,7 +33,7 @@ Para este cenário estaremos utilizando os seguintes serviços da AWS:
 Após acessar sua conta AWS, navegue até o serviço "EC2" ou acesse diretamente por esse link:
 https://console.aws.amazon.com/ec2.
 
-Clique em execultar instâncias
+Clique em executar instâncias
 
 ![EC2_01](./assets/tela_01.png)
 
@@ -67,21 +67,21 @@ Agora vamos configurar os parâmetros da EC2.
 - Configurações de rede:
     - Criar grupo de segurança:
         - Permitir trafego SSH de:
-            - Anywhere (é feita uma liberacao de acesso para qualquer destino)
+            - Anywhere (é feita uma liberação de acesso para qualquer destino)
             - Custom (é possível colocar um endereço de IP de onde deve ser feito o acesso)
             - MyIp (á AWS identifica seu IP de origem e faz a liberação apenas para ele)
 
 ![EC2_07](./assets/tela_07.png)
 
-- Configurações avançadas vamos colocar nosso script que está aqui neste diretorio (https://github.com/cloudfaster-academy-workshop/lab-resilience-ec2/blob/main/scripts/ec2_user_data) para que a EC2 execute o mesmo durante sua inicialização.
-- Após essa etapa, clique em *"Execultar instância"*, para que a mesma seja provisionada e inicializada
+- Configurações avançadas vamos colocar nosso script que está aqui neste diretório (https://github.com/cloudfaster-academy-workshop/lab-resilience-ec2/blob/main/scripts/ec2_user_data) para que a EC2 execute o mesmo durante sua inicialização.
+- Após essa etapa, clique em *"Executar instância"*, para que a mesma seja provisionada e inicializada
 
 
 ![EC2_08](./assets/tela_08.png)
 
 ## Passo 2: Testar o acesso web na aplicação
 
-No painel do serviço de EC2, vamos verificar o estato da nossa instanância:
+No painel do serviço de EC2, vamos verificar o estado da nossa instância:
 
 - Executando (EC2 ativa, provisionada e pronta para utilização)
 - Prosionando (EC2 ainda está sendo disponiblizada pela AWS)
@@ -141,7 +141,7 @@ Preencher o nome (*ELB-LAB-EC2*) do nosso ELB, deixar ele com interface para int
 
 ![EC2_18](./assets/tela_18.png)
 
-No Painel de EC2, temos a coluna onde temos a *Zona de Disponibilidade* que ela está. no nosso exemploe ela fica em *`us-east-1`*
+No Painel de EC2, temos a coluna onde temos a *Zona de Disponibilidade* que ela está. no nosso exemplo ela fica em *`us-east-1`*
 
 ![EC2_19](./assets/tela_19.png)
 
@@ -246,7 +246,7 @@ Clique com o botão direto no mouse em cima do nome da *instância* e seleciona 
 
 Ao abrir o popup de alerta, clique em *Encerrar*
 
-> **Importante:** Após encerrar a *Instância* o acesso a aplicação nao estará mais funcional
+> **Importante:** Após encerrar a *Instância* o acesso a aplicação não estará mais funcional
 
 ![EC2_36](./assets/tela_36.png)
 
@@ -352,6 +352,6 @@ Assim que a *instância* estiver em execução, ja teremos as duas funcionando n
 
 ![EC2_53](./assets/tela_53.png)
 
-Finalizando o LAB temos uma aplicação escalavél na AWS utilizando o serviço de EC2 + ELB + Auto Scaling
+Finalizando o LAB temos uma aplicação escalável na AWS utilizando o serviço de EC2 + ELB + Auto Scaling
 
 That's all folks!
