@@ -73,7 +73,7 @@ Agora vamos configurar os parâmetros da EC2.
 
 ![EC2_07](./assets/tela_07.png)
 
-- Configurações avançadas vamos colocar nosso script para que a EC2 execute o mesmo durante sua inicialização.
+- Configurações avançadas vamos colocar nosso script que está aqui neste diretorio (https://github.com/cloudfaster-academy-workshop/lab-resilience-ec2/blob/main/scripts/ec2_user_data) para que a EC2 execute o mesmo durante sua inicialização.
 - Após essa etapa, clique em *"Execultar instância"*, para que a mesma seja provisionada e inicializada
 
 
