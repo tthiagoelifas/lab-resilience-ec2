@@ -180,7 +180,7 @@ Na configuração do *Target Group*, temos alguns tipos de *Target*, pro nosso A
 ![EC2_27](./assets/tela_27.png)
 
 Vamos colocar um *Nome* e a porta que o nosso *Target* vai trabalhar.
-- Nome: `TARGET_LAB_EC2`
+- Nome: `TARGET-LAB-EC2`
 - Porta 80 (protocolo HTTP)
 
 ![EC2_28](./assets/tela_28.png)
