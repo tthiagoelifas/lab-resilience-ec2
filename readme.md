@@ -11,7 +11,7 @@ Para este cenário estaremos utilizando os seguintes serviços da AWS:
     - Serviço de capacidade computacional da AWS.
 
 - ELB (Elastic Load Balancing):
-    - Serviço de balanceadro de cargas da AWS.
+    - Serviço de balanceamento de cargas da AWS.
     - Distribui o tráfego de rede para melhorar a escalabilidade da aplicação.
 
 - AWS Auto Scaling:
@@ -86,7 +86,7 @@ No painel do serviço de EC2, vamos verificar o estado da nossa instância:
 - Executando (EC2 ativa, provisionada e pronta para utilização)
 - Prosionando (EC2 ainda está sendo disponiblizada pela AWS)
 
-Vamos copiar o IP público da nossa instânia e testar em um navegado para validar a aplicação. <br /> <br />
+Vamos copiar o IP público da nossa instânia e testar em um navegador para validar a aplicação. <br /> <br />
 
 > **Importante:** O IP externo utilizado no LAB é diferente do que vai aparecer na sua Console da AWS.
 
@@ -169,7 +169,7 @@ Vamos selecionar o *Security Group* criado para o nosso ELB
 
 ![EC2_25](./assets/tela_25.png)
 
-## Passo 4: Registrar a EC2 no ELB (Elistic Load Balance)
+## Passo 4: Registrar a EC2 no ELB (Elastic Load Balance)
 
 Clique em  *Create Target Group*
 
@@ -199,7 +199,7 @@ Clicar quem *Criar Load Balancer*
 
 ## Passo 5: Testar o acesso pelo ELB (Elastic Load Balance)
 
-Navegando na tela da Load Balance vamos copiar o nome de DNS criado para testar o acesso em um navegado
+Navegando na tela da Load Balance vamos copiar o nome de DNS criado para testar o acesso em um navegador
 
 > **Importante:** Para o ELB ficar como *Ativo* pode demorar alguns minutos.
 
@@ -322,7 +322,7 @@ Clicar em *Próximo*.
 
 ![EC2_49](./assets/tela_49.png)
 
-Na etapa de *Adicionar noficações*: Clicar em *Próximo*.
+Na etapa de *Adicionar notificações*: Clicar em *Próximo*.
 
 Na etapa de *Adicionar etiquetas*: Clicar em *Próximo*.
 
