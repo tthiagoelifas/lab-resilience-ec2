@@ -16,7 +16,7 @@ Para este cenário estaremos utilizando os seguintes serviços da AWS:
 
 - AWS Auto Scaling:
     - Serviço que monitora os aplicativos e ajusta automaticamente a capacidade.
-    - Serviço de escalabildiade da AWS.
+    - Serviço de escalabilidade da AWS.
 
 
 ![ARQ](./assets/ARQ-ECS-HA-SCALING.png)
