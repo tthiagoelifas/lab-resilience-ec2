@@ -105,7 +105,7 @@ Selecionar a aba *"Regras de entrada"* e *"Editar regras de entrada"*.
 
 ![EC2_12](./assets/tela_12.png)
 
-Vamos *"Adicionar regras"*, selecionar o protocolo HTTP, Colocar para *"Qualquer origem"* e vamos *"Salvar regras"*.
+Vamos *"Adicionar regras"*, selecionar o protocolo HTTP, Colocar para *"Qualquer local-IPv4"* e vamos *"Salvar regras"*.
 
 ![EC2_13](./assets/tela_13.png)
 
@@ -158,7 +158,8 @@ Configurar um novo *Security Group* para o nosso Load Balance
 ![EC2_22](./assets/tela_22.png)
 
 Atribuições:
-- *Nome* para o *Security Group* 
+- Preencher o nome (*SG_ELB_LAB_EC2*) para o *Security Group*
+- Preencher uma descrição para o *Security Group*
 - Adicionar o protocolo HTTP para ser acessado que qualquer origem
 
 ![EC2_23](./assets/tela_23.png)
@@ -171,6 +172,7 @@ Vamos selecionar o *Security Group* criado para o nosso ELB
 
 ## Passo 4: Registrar a EC2 no ELB (Elastic Load Balance)
 
+Na sessão de *Listeners and routing*
 Clique em  *Create Target Group*
 
 ![EC2_26](./assets/tela_26.png)
@@ -182,18 +184,20 @@ Na configuração do *Target Group*, temos alguns tipos de *Target*, pro nosso A
 Vamos colocar um *Nome* e a porta que o nosso *Target* vai trabalhar.
 - Nome: `TARGET-LAB-EC2`
 - Porta 80 (protocolo HTTP)
+- Clique em *Next*
 
 ![EC2_28](./assets/tela_28.png)
 
 Seleciona a *Instância* que foi criada no inicio do LAB e clique em *Include as pending below*.
 
 ![EC2_29](./assets/tela_29.png)
+- Volte para a tela para a tela de config do Load balancer
 
 Criando nosso Listener
 
 Vamos selecionar o *Target Group* que acabamos de criar
 
-Clicar quem *Criar Load Balancer*
+Clicar em *Criar Load Balancer*
 
 ![EC2_30](./assets/tela_30.png)
 
