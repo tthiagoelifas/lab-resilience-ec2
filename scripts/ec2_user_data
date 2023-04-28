@@ -3,6 +3,6 @@ package_upgrade: true
 packages:
 - httpd
 runcmd:
-- cd /var/www/html/ && wget https://raw.githubusercontent.com/crypto-br/CPGOIAS/master/site_ec2_aws.html
+- cd /var/www/html/ && echo "<h1>APP Up</h1>" >> index.html
 - service httpd start
 - chkconfig httpd on
